@@ -2,136 +2,189 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* BODY */
-body {
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
 }
 
-/* HEADER */
+/* ===== BODY ===== */
+body {
+  background-color: #f5f7f6;
+}
+
+/* ===== HEADER ===== */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
   background-color: #ffffff;
-}
-
-.header-left {
+  padding: 20px 32px;
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between;
 }
 
-/* LOGO */
+/* ===== LOGO ===== */
 .logo {
-  font-size: 36px;
+  font-size: 26px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .logo-p {
-  color: green;
+  color: #f4a261; /* P */
 }
 
 .logo-o {
-  color: orange;
+  color: #2a9d8f; /* O */
 }
 
 .logo-s {
-  color: black;
+  color: #000000; /* S შავია */
 }
 
-/* SEARCH */
-.search-input {
-  padding: 8px 12px;
-  width: 260px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-/* DATE */
-.header-date {
+/* ===== SEARCH ===== */
+.search {
+  width: 320px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
   font-size: 14px;
-  color: #777;
 }
 
-/* MAIN */
-.main-content {
-  padding: 20px;
-}
-
-/* START SECTION */
-.start-section {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 14px;
-  margin-bottom: 30px;
-}
-
-/* START BUTTON */
-.start-btn {
-  background-color: green;
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.start-btn:hover {
-  background-color: #0a8a0a;
-}
-
-/* PRODUCTS */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+/* ===== HEADER RIGHT ===== */
+.header-right {
+  display: flex;
+  align-items: center;
   gap: 20px;
 }
 
+.date {
+  font-size: 13px;
+  color: #8a8a8a;
+}
+
+.add-btn {
+  padding: 10px 18px;
+  border-radius: 12px;
+  background-color: #e6f0eb;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #cfe4db;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  padding: 32px;
+}
+
+/* ===== PRODUCTS GRID ===== */
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 240px);
+  gap: 20px;
+  justify-content: center;
+}
+
+/* ===== CARD ===== */
 .card {
   background-color: #ffffff;
-  padding: 16px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  border-radius: 16px;
+  padding: 12px;
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
+/* IMAGE */
 .card img {
-  width: 140px;
-  margin-bottom: 12px;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-.card-title {
-  color: orange;
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-.card-title::first-letter {
-  font-size: 22px;
-}
-
-.card-category {
-  font-size: 12px;
-  color: #777;
-}
-
-/* FOOTER */
-.footer {
-  margin-top: 40px;
-  padding: 20px;
-  text-align: center;
-  background-color: #ffffff;
+/* TITLE */
+.card h3 {
   font-size: 14px;
+  margin-top: 10px;
+  color: #2b2b2b;
+}
+
+/* META */
+.meta {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #7a7a7a;
+}
+
+/* ===== CATEGORY BADGE (N / G) ===== */
+.badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #eef3f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: #3a5a40;
+}
+
+/* ===== SPICY (PEPPERS) ===== */
+.spicy {
+  display: flex;
+  gap: 3px;
+}
+
+
+.spicy::before {
+  content: "";
+  width: 6px;
+  height: 10px;
+  background-color: #e63946; /* წითელი */
+  border-radius: 4px 4px 6px 6px;
+  transform: rotate(-20deg);
+}
+
+
+.spicy-2::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  background-color: #e63946;
+  border-radius: 4px 4px 6px 6px;
+  transform: rotate(-20deg);
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cat-btn {
+  padding: 10px 26px;
+  border-radius: 22px;
+  border: none;
+  background-color: #e5e5e5;
   color: #555;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cat-btn:hover {
+  background-color: #dcdcdc;
+}
+
+.cat-btn.active {
+  background-color: #3a5a40;
+  color: #ffffff;
 }
